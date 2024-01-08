@@ -1,0 +1,5 @@
+
+
+const card = (data) => {
+reurn 
+}

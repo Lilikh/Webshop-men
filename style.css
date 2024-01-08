@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    list-style: none;
+    box-sizing: none;
+}
+
+.nav-item li{
+    list-style: none;
+    text-decoration: none;
+    box-sizing: none;
+}
