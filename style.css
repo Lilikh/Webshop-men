@@ -11,6 +11,8 @@ body{
     list-style: none;
     text-decoration: none;
     box-sizing: none;
+    
+ 
 }
 /* ändra color på card button */
 .custom-btn {
@@ -52,10 +54,19 @@ gap: 5rem;
 
 
 }
+.card-body {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: flex-end;
+  }
 
 @media(max-width: 991px) {
     .navbar-nav,
     .mr-auto {
     display: block;
-    }    
-}
+
+    }
+ 
+} 
+

@@ -1,9 +1,8 @@
-const mensClothingButton = document.getElementById('mens-clothing');
+export function filterProductsByCategory(products, category) {
+    if(!Array.isArray(products) || !category || typeof category !== 'string') {
+        console.error('invalid data or category.')
+        return [];
+    }
 
-const menClothing = () => {
-    const mensClothingProducts = product.filter(product => product.category === "men's clothing");
+    return products.filter(product => product.category.toLowerCase() === category.toLowerCase()); 
 }
-
-mensClothingButton.addEventListener('click', menClothing);
-
-export { mensClothingButton, menClothing};
