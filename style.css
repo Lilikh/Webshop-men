@@ -12,3 +12,23 @@ body{
     text-decoration: none;
     box-sizing: none;
 }
+/* ändra color på card buttin */
+.custom-btn {
+    background-color: #f8f3f3;
+  
+    color: #ffffff;
+    
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 10rem;
+}
+
+.justify-self-end{
+    justify-self: end;
+ 
+
+}
