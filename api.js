@@ -1,6 +1,8 @@
 import { card } from "/Cards.js";
-import { mensClothingButton, menClothing} from "/Categories.js";
+import { modal } from "/Modal.js";
+import { mensClothingButton, menClothing } from "/Categories.js";
 const cardsContainer = document.querySelector(".cards-container");
+const seMore = document.querySelector("#seMore");
 
 const url = "https://fakestoreapi.com/products";
 
@@ -16,3 +18,7 @@ const products = (data) => {
     cardsContainer.innerHTML += card(product);
   });
 };
+
+seMore.addEventListener("click", (event) => {
+  cardsContainer.innerHTML += modal(event.target.value);
+});

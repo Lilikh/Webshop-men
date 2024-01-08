@@ -12,7 +12,7 @@ body{
     text-decoration: none;
     box-sizing: none;
 }
-/* ändra color på card buttin */
+/* ändra color på card button */
 .custom-btn {
     background-color: #f8f3f3;
   
@@ -25,10 +25,37 @@ body{
     justify-content: space-between;
     gap: 1rem;
     margin: 0 10rem;
+  
 }
 
 .justify-self-end{
     justify-self: end;
+    
+
  
 
+}
+
+/* img {
+    object-fit: contain;
+    max-height: 15vh;
+    
+    
+} */
+.navbar-nav,
+.mr-auto {
+flex:auto;
+display: flex;
+justify-content: center;
+gap: 5rem;
+
+
+
+}
+
+@media(max-width: 991px) {
+    .navbar-nav,
+    .mr-auto {
+    display: block;
+    }    
 }

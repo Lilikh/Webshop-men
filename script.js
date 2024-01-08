@@ -1,46 +1,37 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const products = [
-    // Your product data
-  ];
+// Define a sample data object
+const data = {
+  id: 1, // or some unique identifier
+  // other properties...
+};
 
-  function updateQuantity(productId, action) {
-    const product = products.find((p) => p.id === productId);
+// Wrap your existing code in a function that takes the data as a parameter
+function initializeQuantityControls(data) {
+  document.addEventListener("DOMContentLoaded", function () {
+    const quantityElement = document.getElementById(`quantity-${data.id}`);
+    const btnMinus = document.querySelector(`.btn-minus[data-id="${data.id}"]`);
+    const btnPlus = document.querySelector(`.btn-plus[data-id="${data.id}"]`);
 
-    if (product) {
+    btnMinus.addEventListener("click", function () {
+      updateQuantity("minus");
+    });
+
+    btnPlus.addEventListener("click", function () {
+      updateQuantity("plus");
+    });
+
+    function updateQuantity(action) {
+      let currentQuantity = parseInt(quantityElement.textContent) || 0;
+
       if (action === "plus") {
-        product.quantity = (product.quantity || 0) + 1;
-      } else if (action === "minus" && product.quantity > 0) {
-        product.quantity -= 1;
+        currentQuantity++;
+      } else if (action === "minus" && currentQuantity > 0) {
+        currentQuantity--;
       }
 
-      // Update the UI
-      renderProducts();
+      quantityElement.textContent = currentQuantity;
     }
-  }
+  });
+}
 
-  function renderProducts() {
-    const productContainer = document.getElementById("producten");
-    productContainer.innerHTML = "";
-
-    products.forEach((product) => {
-      const productCard = document.createElement("div");
-      productCard.innerHTML = card(product);
-      productContainer.appendChild(productCard);
-
-      // Add event listeners for plus and minus buttons
-      const btnPlus = productCard.querySelector(".btn-plus");
-      const btnMinus = productCard.querySelector(".btn-minus");
-
-      btnPlus.addEventListener("click", function () {
-        updateQuantity(product.id, "plus");
-      });
-
-      btnMinus.addEventListener("click", function () {
-        updateQuantity(product.id, "minus");
-      });
-    });
-  }
-
-  // Initial rendering
-  renderProducts();
-});
+// Call the function with the data
+initializeQuantityControls(data);
